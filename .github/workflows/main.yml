@@ -34,4 +34,6 @@ jobs:
       - name: Run tests
         run: |
           cd server
-          python manage.py test
+          pytest --cov --cov-report=xml
+      - name: Upload coverage
+        uses: codecov/codecov-action@v3

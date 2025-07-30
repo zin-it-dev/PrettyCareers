@@ -18,16 +18,23 @@ DATABASES = {
     }
 }
 
-INSTALLED_APPS += [    
-    'silk',
-    "debug_toolbar",
-]
+import sys
 
-MIDDLEWARE += [
-    'silk.middleware.SilkyMiddleware',
-    "debug_toolbar.middleware.DebugToolbarMiddleware"
-]
+TESTING = "test" in sys.argv or "PYTEST_VERSION" in os.environ
+
+if not TESTING:
+    INSTALLED_APPS += [    
+        'silk',
+        "debug_toolbar",
+    ]
+
+    MIDDLEWARE += [
+        'silk.middleware.SilkyMiddleware',
+        "debug_toolbar.middleware.DebugToolbarMiddleware"
+    ]
+
 
 DEBUG_TOOLBAR_CONFIG = {
-    'SHOW_TOOLBAR_CALLBACK': lambda request: True
+    'SHOW_TOOLBAR_CALLBACK': lambda request: True,
+    'IS_RUNNING_TESTS': False,
 }

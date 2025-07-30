@@ -7,7 +7,7 @@ urlpatterns = [
     path("", include("apis.urls")),
 ]
 
-if settings.DEBUG:
+if settings.DEBUG and not settings.TESTING:
     import debug_toolbar 
     urlpatterns += [
         path('silk/', include('silk.urls', namespace='silk')), 
