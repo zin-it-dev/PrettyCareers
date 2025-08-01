@@ -4,6 +4,8 @@ INTERNAL_IPS = os.environ.get("INTERNAL_IPS", "*").split(",")
 
 ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "*").split(",")
 
+CORS_ALLOW_ALL_ORIGINS = True
+
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
@@ -38,3 +40,5 @@ DEBUG_TOOLBAR_CONFIG = {
     'SHOW_TOOLBAR_CALLBACK': lambda request: True,
     'IS_RUNNING_TESTS': False,
 }
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"

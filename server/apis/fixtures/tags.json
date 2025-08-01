@@ -1,0 +1,38 @@
+[
+  {
+    "model": "apis.Tag",
+    "pk": 1,
+    "fields": {
+      "name": "website",
+      "date_created": "2023-01-01T00:00:00Z",
+      "date_modified": "2023-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "apis.Tag",
+    "pk": 2,
+    "fields": {
+      "name": "tech",
+      "date_created": "2023-01-01T00:00:00Z",
+      "date_modified": "2023-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "apis.Tag",
+    "pk": 3,
+    "fields": {
+      "name": "ai",
+      "date_created": "2023-01-01T00:00:00Z",
+      "date_modified": "2023-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "apis.Tag",
+    "pk": 4,
+    "fields": {
+      "name": "dsa",
+      "date_created": "2023-01-01T00:00:00Z",
+      "date_modified": "2023-01-01T00:00:00Z"
+    }
+  }
+]

@@ -1,7 +1,7 @@
 from django.db import models
 from django.core.exceptions import ObjectDoesNotExist
 
-from .models import User
+from .models import User, Category, Course
 
 class BaseRepository:
     def __init__(self, model: models.Model):
@@ -42,3 +42,16 @@ class UserRepository(BaseRepository):
     
     def get_all(self):
         return self.model.objects.all().order_by('-date_joined')
+    
+    
+class CategoryRepository(BaseRepository):
+    def __init__(self):
+        super().__init__(Category)
+        
+        
+class CourseRepository(BaseRepository):
+    def __init__(self):
+        super().__init__(Course)
+        
+    def get_all(self):
+        return self.model.objects.filter(is_active=True).all().order_by('-date_created')
